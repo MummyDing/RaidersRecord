@@ -1,4 +1,4 @@
-package com.github.mummyding.raidersrecord.support;
+package com.github.mummyding.raidersrecord.support.adapter;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.github.mummyding.raidersrecord.R;
 import com.github.mummyding.raidersrecord.model.RaiderModel;
+import com.github.mummyding.raidersrecord.support.TextUtil;
 
 import java.util.List;
 
@@ -27,13 +28,18 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public static final int TYPE_RUNNING = 1;
 
     private List<RaiderModel> list;
-    private Context context;
 
-    public ListAdapter(Context context,List<RaiderModel> list) {
-        this.context = context;
+
+    public ListAdapter(List<RaiderModel> list) {
         this.list = list;
     }
 
+    /**
+     * create ViewHolder by type
+     * @param parent
+     * @param viewType
+     * @return
+     */
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view;
@@ -50,6 +56,11 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return null;
     }
 
+    /**
+     * Bind View & Data
+     * @param holder
+     * @param position
+     */
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
@@ -87,11 +98,22 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return list.size();
     }
 
+    /**
+     * Two kinds of type:
+     * TYPE_FINISHED for layout item_raiders_finished , TYPE_RUNNING for layout item_raiders_running
+     * @param position
+     * @return
+     */
     @Override
     public int getItemViewType(int position) {
         return list.get(position).isFinished() ? TYPE_FINISHED:TYPE_RUNNING;
     }
 
+
+    /***
+     * We'd better　declare it to static
+     * tips:A static nested class does not have a reference to a nesting instance -- By MummyDing
+     */
     static class RunningViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
@@ -110,6 +132,10 @@ public class ListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         }
     }
 
+    /***
+     * We'd better　declare it to static
+     * tips:A static nested class does not have a reference to a nesting instance -- By MummyDing
+     */
     static class FinishedViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;

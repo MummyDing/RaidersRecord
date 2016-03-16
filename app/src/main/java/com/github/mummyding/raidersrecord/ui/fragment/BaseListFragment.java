@@ -1,4 +1,4 @@
-package com.github.mummyding.raidersrecord.ui;
+package com.github.mummyding.raidersrecord.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.github.mummyding.raidersrecord.R;
 import com.github.mummyding.raidersrecord.support.DataLoader;
-import com.github.mummyding.raidersrecord.support.ListAdapter;
+import com.github.mummyding.raidersrecord.support.adapter.ListAdapter;
 
 /**
  * Created by MummyDing on 16-3-16.
@@ -35,12 +35,16 @@ public abstract class BaseListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         parentView =  inflater.inflate(R.layout.fragment_list, container, false);
+        initView();
+        return parentView;
+    }
+
+    private void initView(){
         recyclerView = (RecyclerView) parentView.findViewById(R.id.recyclerView);
         mLayoutManager = new LinearLayoutManager(getContext());
-        adapter = new ListAdapter(getContext(), DataLoader.load());
+        adapter = new ListAdapter(DataLoader.load());
         recyclerView.setAdapter(adapter);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setLayoutManager(mLayoutManager);
-        return parentView;
     }
 }

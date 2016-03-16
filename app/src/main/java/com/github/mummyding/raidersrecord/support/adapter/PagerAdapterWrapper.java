@@ -1,10 +1,10 @@
-package com.github.mummyding.raidersrecord.support;
+package com.github.mummyding.raidersrecord.support.adapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.github.mummyding.raidersrecord.ui.BaseListFragment;
+import com.github.mummyding.raidersrecord.ui.fragment.BaseListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +40,10 @@ public class PagerAdapterWrapper {
     }
 
 
+    /**
+     * you must add fragments before invoke this function
+     * @return
+     */
     public PagerAdapter build(){
         PagerAdapter pagerAdapter = new PagerAdapter(fragmentManager,fragments);
         return pagerAdapter;

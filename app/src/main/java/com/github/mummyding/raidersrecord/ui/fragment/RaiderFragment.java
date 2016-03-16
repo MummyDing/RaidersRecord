@@ -1,4 +1,4 @@
-package com.github.mummyding.raidersrecord.ui;
+package com.github.mummyding.raidersrecord.ui.fragment;
 
 /**
  * Created by MummyDing on 16-3-16.

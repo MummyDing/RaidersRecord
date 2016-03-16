@@ -5,10 +5,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 
 import com.github.mummyding.raidersrecord.R;
-import com.github.mummyding.raidersrecord.support.PagerAdapterWrapper;
+import com.github.mummyding.raidersrecord.support.adapter.PagerAdapterWrapper;
+import com.github.mummyding.raidersrecord.ui.fragment.LuckFragment;
+import com.github.mummyding.raidersrecord.ui.fragment.RaiderFragment;
 
 public class MainActivity extends AppCompatActivity {
 
