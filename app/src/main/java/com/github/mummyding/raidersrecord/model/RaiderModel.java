@@ -10,7 +10,8 @@ public class RaiderModel {
     private String imageUri;
     private String activityTitle;
     private String currentDateState;
-    private String participantCount;
+    private String finishedTime;
+    private int participantCount;
     private String winner;
 
 
@@ -38,13 +39,22 @@ public class RaiderModel {
         this.currentDateState = currentDateState;
     }
 
-    public String getParticipantCount() {
+    public String getFinishedTime() {
+        return finishedTime;
+    }
+
+    public void setFinishedTime(String finishedTime) {
+        this.finishedTime = finishedTime;
+    }
+
+    public int getParticipantCount() {
         return participantCount;
     }
 
-    public void setParticipantCount(String participantCount) {
+    public void setParticipantCount(int participantCount) {
         this.participantCount = participantCount;
     }
+
 
     public String getWinner() {
         return winner;

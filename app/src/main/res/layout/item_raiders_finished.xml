@@ -4,6 +4,7 @@
     android:layout_height="match_parent">
     <!--Left Layout-->
     <ImageView
+        android:id="@+id/image"
         android:src="@drawable/image"
         android:scaleType="centerCrop"
         android:layout_width="78dp"
@@ -58,6 +59,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
                 <TextView
+                    android:id="@+id/winner"
                     android:text="王思聪"
                     android:textColor="#FFE64D43"
                     android:textSize="18sp"

@@ -8,6 +8,6 @@ package com.github.mummyding.raidersrecord.support;
 public class TextUtil {
 
     public static boolean isNull(String str){
-        return str!=null && !str.isEmpty();
+        return str==null || str.isEmpty();
     }
 }
