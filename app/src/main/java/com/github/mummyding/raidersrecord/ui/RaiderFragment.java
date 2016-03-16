@@ -5,5 +5,9 @@ package com.github.mummyding.raidersrecord.ui;
  * GitHub: https://github.com/MummyDing
  * Blog: http://blog.csdn.net/mummyding
  */
-public class RaiderFragment {
+public class RaiderFragment extends BaseListFragment {
+    @Override
+    public String getTitle() {
+        return "夺宝记录";
+    }
 }

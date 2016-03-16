@@ -7,5 +7,10 @@ import android.support.v4.app.Fragment;
  * GitHub: https://github.com/MummyDing
  * Blog: http://blog.csdn.net/mummyding
  */
-public class BaseListFragmnet extends Fragment {
+public abstract class BaseListFragment extends Fragment {
+    /**
+     * you must to implement it,this title will be regarded as tab title by default.
+     * @return
+     */
+    public abstract String getTitle();
 }
